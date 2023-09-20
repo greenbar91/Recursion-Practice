@@ -11,9 +11,16 @@ sumArray([1, 2, 3, 4, 5]); // 15
 ***********************************************************************/
 
 function sumArray(arr) {
-  // Your code here 
+  if(!arr.length){
+    return null
+  }
+
+  const firstElement = arr[0];
+  const remainingArray = arr.slice(1);
+
+  return firstElement + sumArray(remainingArray);
 }
-  
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = sumArray;
