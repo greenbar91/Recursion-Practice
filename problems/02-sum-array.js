@@ -12,7 +12,7 @@ sumArray([1, 2, 3, 4, 5]); // 15
 
 function sumArray(arr) {
   if(!arr.length){
-    return null
+    return 0;
   }
 
   const firstElement = arr[0];

@@ -5,17 +5,39 @@ user's favorite ice cream flavor. Recursively find out whether or not the shop
 offers their favorite flavor.
 
 Examples:
-iceCreamShop(['vanilla', 'strawberry'], 'blue moon'); // false
-iceCreamShop(['pistachio', 'green tea', 'chocolate', 'mint chip'], 'green tea'); // true
-iceCreamShop(['cookies n cream', 'blue moon', 'superman', 'honey lavender', 'sea salt caramel'], 'pistachio'); // false
-iceCreamShop(['moose tracks'], 'moose tracks'); // true
-iceCreamShop([], 'honey lavender'); // false
 ***********************************************************************/
 
 
 function iceCreamShop(flavors, favorite) {
-  // Your code here 
+//If empty array, return false
+if(!flavors.length){
+  return false;
 }
+
+//Get first element of the array
+const firstElement = flavors[0];
+
+//Get the rest of the array
+const slicedFlavors = flavors.slice(1);
+
+//Look for the favorite in the array
+if(firstElement === favorite){
+  return true;
+}
+
+//To see if the favorite exists in the array
+return iceCreamShop(slicedFlavors, favorite)
+
+
+}
+
+
+
+console.log(iceCreamShop(['vanilla', 'strawberry'], 'blue moon')); // false
+console.log(iceCreamShop(['pistachio', 'green tea', 'chocolate', 'mint chip'], 'green tea')); // true
+console.log(iceCreamShop(['cookies n cream', 'blue moon', 'superman', 'honey lavender', 'sea salt caramel'], 'pistachio')); // false
+console.log(iceCreamShop(['moose tracks'], 'moose tracks')); // true
+console.log(iceCreamShop([], 'honey lavender')); // false
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
